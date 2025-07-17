@@ -103,10 +103,10 @@ export default function App() {
     
 
       {/* Title */}
-      <div className="title">
-        <img src="/satlayer-logo.jpg" alt="satlayer Logo" className="title-logo" />
-        <span>Satlayer Team Flip</span>
-      </div>
+      <h1 className="title">
+  <img src="/satlayer-logo.jpg" className="title-logo" alt="Satlayer Logo" />
+  Satlayer Team Flip
+</h1>
 
       <h2 className="subtitle">How well can you recall the @satlayer team members? Let's play...</h2>
 
