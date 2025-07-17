@@ -35,9 +35,18 @@ body {
   }
 
   .title-logo {
-    width: 30px;
-    height: 30px;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+@media (max-width: 600px) {
+  .title-logo {
+    width: 28px;
+    height: 28px;
   }
+}
 
   .subtitle {
     font-size: 0.9rem;
