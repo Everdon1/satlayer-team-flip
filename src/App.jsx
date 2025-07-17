@@ -167,7 +167,7 @@ export default function App() {
           rel="noopener noreferrer"
           className="highlight"
         >
-          recallnet <FaTwitter className="twitter-icon" />
+          satlayer <FaTwitter className="twitter-icon" />
         </a>
       </p>
     </div>
