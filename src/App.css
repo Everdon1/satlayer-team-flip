@@ -271,30 +271,31 @@ body {
   }
 }
 
-.top-buttons {
-  position: fixed;
-  top: 80px;
-  right: 16px;
-  display: flex;
-  gap: 10px;
-  z-index: 999;
-}
-
-.pause-button, .mute-button {
+.mute-button {
   background: #222;
   border: none;
   color: white;
   font-size: 1.2rem;
   cursor: pointer;
-  padding: 6px;
+  padding: 10px;
   border-radius: 50%;
   box-shadow: 0 0 8px white;
 }
 
-@media (max-width: 600px) {
-  .top-buttons {
-    top: 60px;
-    right: 10px;
-  }
+.pause-button {
+  background: linear-gradient(45deg, #ffd700, #fff700);
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  font-weight: bold;
+  color: black;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 0 15px #ffd700, 0 0 10px #fff;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
+.pause-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #fff000;
+}
