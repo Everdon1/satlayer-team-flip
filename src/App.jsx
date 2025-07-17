@@ -89,7 +89,7 @@ export default function App() {
   };
 
   const shareText = encodeURIComponent("🎉 I just WON the @satlayer Team Flip memory game! You can play it here:");
-  const shareURL = encodeURIComponent("https://satlayer-teamflip.vercel.app");
+  const shareURL = encodeURIComponent("https://satlayer-team-flip.vercel.app");
   const tweetLink = `https://twitter.com/intent/tweet?text=${shareText}&url=${shareURL}`;
 
   return (

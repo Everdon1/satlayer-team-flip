@@ -14,7 +14,7 @@ body {
 }
 
 .title {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 700;
   color: black;
   display: flex;
@@ -23,15 +23,25 @@ body {
   gap: 10px;
 }
 
-.title-logo {
-  width: 55px;
-  height: 55px;
-}
-
 .subtitle {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   margin-top: 0.5rem;
   color: black;
+}
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 1.3rem;
+  }
+
+  .title-logo {
+    width: 30px;
+    height: 30px;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
 }
 
 .grid {
@@ -172,9 +182,9 @@ body {
 }
 
 .mute-button {
-  position: absolute;
-  top: 20px;
-  right: 20px;
+  position: fixed;
+  top: 80px;
+  right: 16px;
   background: #222;
   border: none;
   color: white;
@@ -184,6 +194,13 @@ body {
   border-radius: 50%;
   z-index: 999;
   box-shadow: 0 0 8px white;
+}
+
+@media (max-width: 600px) {
+  .mute-button {
+    top: 100px; /* More spacing for small screens */
+    right: 12px;
+  }
 }
 
 .background-blur {
@@ -206,4 +223,11 @@ body {
   height: 100%;
   background: rgba(10, 10, 10, 0.4); /* optional dim overlay */
   z-index: -1;
+}
+
+@media (max-width: 600px) {
+  .mute-button {
+    top: 60px; /* push it down more */
+    right: 10px; /* fine-tune if needed */
+  }
 }
