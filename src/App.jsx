@@ -97,12 +97,10 @@ export default function App() {
       <div className="background-overlay"></div>
 
       {/* Controls */}
-     <div className="top-right-buttons">
-  <button onClick={togglePause} className="pause-button">
-    {isPaused ? '▶' : '⏸'}
-  </button>
-  <button onClick={toggleMute} className="mute-button">
-    {isMuted ? '🔇' : '🔊'}
+     <div className="top-buttons">
+  <button className="pause-button" onClick={togglePause}>⏸️</button>
+  <button className="mute-button" onClick={toggleMute}>
+    {isMuted ? "🔇" : "🔊"}
   </button>
 </div>
 
