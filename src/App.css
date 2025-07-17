@@ -11,6 +11,10 @@ body {
   padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
+  border: 4px solid #fff;
+  box-shadow: 0 0 30px #ffd700;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .title {
@@ -21,36 +25,36 @@ body {
   align-items: center;
   justify-content: center;
   gap: 10px;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.title-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 1.2rem;
+  }
+
+  .title-logo {
+    width: 28px;
+    height: 28px;
+  }
+
+  .subtitle {
+    font-size: 0.85rem;
+  }
 }
 
 .subtitle {
   font-size: 1.1rem;
   margin-top: 0.5rem;
   color: black;
-}
-
-@media (max-width: 600px) {
-  .title {
-    font-size: 1.3rem;
-  }
-
-  .title-logo {
-  width: 40px;
-  height: 40px;
-  border-radius: 8px;
-  object-fit: cover;
-}
-
-@media (max-width: 600px) {
-  .title-logo {
-    width: 28px;
-    height: 28px;
-  }
-}
-
-  .subtitle {
-    font-size: 0.9rem;
-  }
 }
 
 .grid {
@@ -73,13 +77,14 @@ body {
   perspective: 1000px;
   cursor: pointer;
   border-radius: 10px;
-  border: 2px solid white;
-  box-shadow: 0 0 10px white;
-  transition: transform 0.2s ease;
+  border: 2px solid #fff;
+  box-shadow: 0 0 12px #ffd700;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-  transform: scale(1.05);
+  transform: scale(1.05) rotateY(5deg);
+  box-shadow: 0 0 20px #fff;
 }
 
 .inner {
@@ -94,7 +99,8 @@ body {
   transform: rotateY(180deg);
 }
 
-.front, .back {
+.front,
+.back {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -152,7 +158,8 @@ body {
   flex-wrap: wrap;
 }
 
-.share-button, .play-again {
+.share-button,
+.play-again {
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 6px;
@@ -207,9 +214,28 @@ body {
 
 @media (max-width: 600px) {
   .mute-button {
-    top: 100px; /* More spacing for small screens */
+    top: 130px;
     right: 12px;
   }
+}
+
+.pause-button {
+  background: linear-gradient(45deg, #ffd700, #fff700);
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-weight: bold;
+  color: black;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 0 15px #ffd700, 0 0 10px #fff;
+  transition: transform 0.3s, box-shadow 0.3s;
+  transform: perspective(600px) rotateX(5deg);
+}
+
+.pause-button:hover {
+  transform: scale(1.05) perspective(600px) rotateX(0deg);
+  box-shadow: 0 0 25px #fff000;
 }
 
 .background-blur {
@@ -222,21 +248,11 @@ body {
   background-size: cover;
   filter: blur(12px);
   z-index: -2;
+  
+}.game {
+  border: 3px solid white;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+  border-radius: 12px;
 }
 
-.background-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(10, 10, 10, 0.4); /* optional dim overlay */
-  z-index: -1;
-}
 
-@media (max-width: 600px) {
-  .mute-button {
-    top: 60px; /* push it down more */
-    right: 10px; /* fine-tune if needed */
-  }
-}
