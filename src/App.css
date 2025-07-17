@@ -255,19 +255,19 @@ body {
   border-radius: 12px;
 }
 
-.top-right-buttons {
+.top-buttons {
   position: fixed;
-  top: 80px;
-  right: 16px;
+  top: 140px;
+  right: 12px;
   display: flex;
-  gap: 10px;
+  gap: 12px;
   z-index: 999;
 }
 
-@media (max-width: 600px) {
-  .top-right-buttons {
-    top: 130px;
-    right: 12px;
+@media (min-width: 600px) {
+  .top-buttons {
+    top: 80px;
+    right: 16px;
   }
 }
 
@@ -286,16 +286,17 @@ body {
   background: linear-gradient(45deg, #ffd700, #fff700);
   border: none;
   border-radius: 10px;
-  padding: 10px;
+  padding: 10px 16px;
   font-weight: bold;
   color: black;
   font-size: 1.1rem;
   cursor: pointer;
   box-shadow: 0 0 15px #ffd700, 0 0 10px #fff;
   transition: transform 0.3s, box-shadow 0.3s;
+  transform: perspective(600px) rotateX(5deg);
 }
 
 .pause-button:hover {
-  transform: scale(1.05);
+  transform: scale(1.05) perspective(600px) rotateX(0deg);
   box-shadow: 0 0 25px #fff000;
 }
