@@ -1,70 +1,65 @@
 body {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: url('/satlayer-background.jpg') no-repeat center center fixed;
+  font-family: "Segoe UI", sans-serif;
+  background: url("/satlayer-background.jpg") no-repeat center center fixed;
   background-size: cover;
-  backdrop-filter: blur(8px);
-  color: white;
+  color: #fff;
 }
 
 .game {
   text-align: center;
-  padding: 2rem;
-  max-width: 1100px;
-  margin: auto;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: black;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.75rem;
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #fff;
-  text-shadow: 1px 1px 2px black;
+  gap: 10px;
 }
 
 .title-logo {
-  height: 50px;
-  border-radius: 50%;
-  border: 2px solid white;
+  width: 55px;
+  height: 55px;
 }
 
 .subtitle {
-  font-size: 1rem;
+  font-size: 1.2rem;
   margin-top: 0.5rem;
-  margin-bottom: 1.5rem;
-  color: #fff;
-  text-shadow: 1px 1px 2px black;
+  color: black;
 }
 
 .grid {
   display: grid;
-  gap: 15px;
+  gap: 12px;
+  padding: 20px 10px;
   justify-content: center;
-  padding: 1rem;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 80px);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 600px) {
   .grid {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(5, 100px);
   }
 }
 
 .card {
-  width: 100px;
-  height: 130px;
+  width: 80px;
+  height: 100px;
   perspective: 1000px;
   cursor: pointer;
-  border: 2px solid #00d1ff;
   border-radius: 10px;
-  transition: transform 0.3s ease;
+  border: 2px solid white;
+  box-shadow: 0 0 10px white;
+  transition: transform 0.2s ease;
 }
 
 .card:hover {
-  box-shadow: 0 0 10px #00d1ff, 0 0 20px #00d1ff;
   transform: scale(1.05);
 }
 
@@ -76,68 +71,90 @@ body {
   transition: transform 0.6s;
 }
 
-.card.flipped .inner {
+.flipped .inner {
   transform: rotateY(180deg);
 }
 
-.front,
-.back {
+.front, .back {
   position: absolute;
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
   border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   overflow: hidden;
 }
 
 .front {
-  background: rgba(0, 0, 0, 0.85);
+  background: radial-gradient(circle, #000 60%, #222);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.logo {
-  width: 60%;
-  opacity: 0.9;
-  filter: drop-shadow(0 0 4px #00d1ff);
+.satlayer-logo {
+  width: 57%;
+  height: auto;
+  filter: drop-shadow(0 0 6px white);
 }
 
 .back {
-  background: rgba(255, 255, 255, 0.9);
+  background: #111;
   transform: rotateY(180deg);
+  display: flex;
   flex-direction: column;
-  padding: 5px;
+  align-items: center;
+  justify-content: center;
 }
 
 .back img {
   width: 90%;
   height: auto;
   border-radius: 6px;
-  margin-bottom: 4px;
 }
 
 .agent-name {
+  margin-top: 5px;
   font-weight: bold;
-  font-size: 0.85rem;
-  color: black;
-  text-shadow: 1px 1px 0 white;
-  animation: glowText 2s ease-in-out infinite alternate;
+  text-shadow: 1px 1px 2px #000, 0 0 10px #fff;
+  color: #fff;
+  font-size: 0.6rem;
 }
 
-@keyframes glowText {
-  from {
-    text-shadow: 0 0 5px #000, 0 0 10px #fff;
-  }
-  to {
-    text-shadow: 0 0 10px #fff, 0 0 20px #000;
-  }
+.fireworks {
+  font-size: 1.8rem;
+  margin: 10px 0;
+}
+
+.buttons {
+  margin: 1rem 0;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.share-button, .play-again {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.share-button {
+  background: #1da1f2;
+  color: white;
+}
+
+.play-again {
+  background: #fff;
+  color: #000;
 }
 
 .footer {
-  margin-top: 3rem;
   font-size: 0.9rem;
-  color: #fff;
+  margin-top: 1.5rem;
+  color: #eee;
 }
 
 .heart {
@@ -146,8 +163,7 @@ body {
 
 .highlight {
   color: #1da1f2;
-  font-weight: bold;
-  text-decoration: none;
+  font-weight: 600;
 }
 
 .twitter-icon {
@@ -155,42 +171,39 @@ body {
   margin-left: 4px;
 }
 
-.buttons {
-  margin-top: 1.5rem;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-button {
-  padding: 8px 16px;
-  border: none;
-  border-radius: 6px;
-  background: #1da1f2;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-button:hover {
-  background: #0d8ddf;
-}
-
 .mute-button {
   position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 1.5rem;
-  background: none;
+  top: 20px;
+  right: 20px;
+  background: #222;
   border: none;
   color: white;
+  font-size: 1.2rem;
   cursor: pointer;
-  z-index: 99;
+  padding: 6px;
+  border-radius: 50%;
+  z-index: 999;
+  box-shadow: 0 0 8px white;
 }
 
-.fireworks {
-  font-size: 2rem;
-  margin-top: 1rem;
+.background-blur {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("/satlayer-background.jpg") no-repeat center center;
+  background-size: cover;
+  filter: blur(12px);
+  z-index: -2;
+}
+
+.background-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 10, 0.4); /* optional dim overlay */
+  z-index: -1;
 }
