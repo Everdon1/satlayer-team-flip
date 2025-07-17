@@ -98,8 +98,7 @@ export default function App() {
 
       {/* Controls */}
      <div className="top-buttons">
-  <button className="pause-button" onClick={togglePause}>⏸️</button>
-  <button className="mute-button" onClick={toggleMute}>
+       <button className="mute-button" onClick={toggleMute}>
     {isMuted ? "🔇" : "🔊"}
   </button>
 </div>
