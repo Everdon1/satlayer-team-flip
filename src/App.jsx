@@ -12,7 +12,6 @@ const agentPool = [
   { name: "imacryptopotato", image: "/imacryptopotato.png" }
 ];
 
-
 function shuffleAgents() {
   const doubled = [...agentPool, ...agentPool];
   for (let i = doubled.length - 1; i > 0; i--) {
@@ -28,6 +27,7 @@ export default function App() {
   const [matched, setMatched] = useState([]);
   const [hasWon, setHasWon] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
 
   const clickSound = new Audio("/click.mp3");
   const matchSound = new Audio("/match.mp3");
@@ -54,7 +54,7 @@ export default function App() {
   }, [matched, isMuted]);
 
   const handleFlip = (index) => {
-    if (flipped.length === 2 || flipped.includes(index) || matched.includes(index)) return;
+    if (flipped.length === 2 || flipped.includes(index) || matched.includes(index) || isPaused) return;
 
     if (!isMuted) clickSound.play();
 
@@ -84,9 +84,8 @@ export default function App() {
     setHasWon(false);
   };
 
-  const toggleMute = () => {
-    setIsMuted(!isMuted);
-  };
+  const toggleMute = () => setIsMuted(!isMuted);
+  const togglePause = () => setIsPaused(!isPaused);
 
   const shareText = encodeURIComponent("🎉 I just WON the @satlayer Team Flip memory game! You can play it here:");
   const shareURL = encodeURIComponent("https://satlayer-team-flip.vercel.app");
@@ -95,18 +94,23 @@ export default function App() {
   return (
     <div className="game">
       <div className="background-blur"></div>
-<div className="background-overlay"></div>
-      {/* Mute Button */}
-      <button className="mute-button" onClick={toggleMute} title={isMuted ? "Unmute" : "Mute"}>
-        {isMuted ? <FaVolumeMute /> : <FaVolumeUp />}
-      </button>
-    
+      <div className="background-overlay"></div>
+
+      {/* Controls */}
+      <div className="top-buttons">
+        <button className="mute-button" onClick={toggleMute} title={isMuted ? "Unmute" : "Mute"}>
+          {isMuted ? <FaVolumeMute /> : <FaVolumeUp />}
+        </button>
+        <button className="pause-button" onClick={togglePause} title={isPaused ? "Play" : "Pause"}>
+          {isPaused ? "▶️" : "⏸️"}
+        </button>
+      </div>
 
       {/* Title */}
       <h1 className="title">
-  <img src="/satlayer-logo.jpg" className="title-logo" alt="Satlayer Logo" />
-  Satlayer Team Flip
-</h1>
+        <img src="/satlayer-logo.jpg" className="title-logo" alt="Satlayer Logo" />
+        Satlayer Team Flip
+      </h1>
 
       <h2 className="subtitle">How well can you recall the @satlayer team members? Let's play...</h2>
 
