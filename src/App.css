@@ -255,4 +255,19 @@ body {
   border-radius: 12px;
 }
 
+.top-right-buttons {
+  position: fixed;
+  top: 80px;
+  right: 16px;
+  display: flex;
+  gap: 10px;
+  z-index: 999;
+}
+
+@media (max-width: 600px) {
+  .top-right-buttons {
+    top: 130px;
+    right: 12px;
+  }
+}
 
