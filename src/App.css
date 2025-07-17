@@ -19,7 +19,7 @@ body {
 }
 
 .title {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 700;
   color: black;
   display: flex;
@@ -39,7 +39,7 @@ body {
 
 @media (max-width: 600px) {
   .title {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
 
   .title-logo {
