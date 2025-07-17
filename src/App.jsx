@@ -101,7 +101,7 @@ export default function App() {
   <button className="mute-button" onClick={toggleMute}>
     {isMuted ? "🔇" : "🔊"}
   </button>
-  <button className="pause-button" onClick={handlePause}>
+  <button className="pause-button" onClick={togglePause}>
     {isPaused ? "▶️" : "⏸️"}
   </button>
 </div>
